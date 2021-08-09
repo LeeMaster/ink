@@ -90,6 +90,15 @@ workflow:
     VAULT_AUTH_PATH:               "gitlab-parity-io-jwt"
     VAULT_AUTH_ROLE:               "cicd_gitlab_parity_${CI_PROJECT_NAME}"
   secrets:
+    CODECOV_P_TOKEN:
+      vault:                       cicd/gitlab/$CI_PROJECT_PATH/CODECOV_P_TOKEN@kv
+      file:                        false
+    CODECOV_TOKEN:
+      vault:                       cicd/gitlab/$CI_PROJECT_PATH/CODECOV_TOKEN@kv
+      file:                        false
+    GITHUB_EMAIL:
+      vault:                       cicd/gitlab/$CI_PROJECT_PATH/GITHUB_EMAIL@kv
+      file:                        false
     GITHUB_USER:
       vault:                       cicd/gitlab/$CI_PROJECT_PATH/GITHUB_USER@kv
       file:                        false
